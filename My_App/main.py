@@ -11,7 +11,7 @@ from nltk.stem import WordNetLemmatizer
 app = FastAPI()
 
 CWD = Path.cwd()
-APP = CWD.joinpath("app")
+APP = CWD.joinpath("My_App")
 model_file = APP.joinpath("model.pkl")
 vectorizer_file = APP.joinpath("vectorizer.pkl")
 
@@ -48,10 +48,10 @@ async def predict_sentiment(request: Request, text: str = Form(...)):
     preprocessed_text = preprocess_text(text)
     vectorized_text = vectorizer.transform([preprocessed_text])
     prediction = model.predict(vectorized_text)[0]
-    sentiment = "Positive" if prediction == 1 else "Negative"
+    label = "Ham" if prediction == 1 else "Spam"
     return templates.TemplateResponse(
         "result.html",
-        {"request": request, "text": text, "prediction": sentiment},
+        {"request": request, "text": text, "prediction": label},
     )
 
 
