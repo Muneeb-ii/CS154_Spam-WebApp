@@ -57,15 +57,15 @@ def train_model(x_train, y_train):
 if __name__ == "__main__":
     # CWD stands for current working directory
     CWD = Path.cwd()
-    APP = CWD.joinpath("app")
+    APP = CWD.joinpath("My_App")
     DATA_DIR = APP.joinpath("data")
-    dataset_filepath = DATA_DIR.joinpath("IMDB Dataset.csv")
+    dataset_filepath = DATA_DIR.joinpath("german_dataset.csv")
 
-    data = pd.read_csv(dataset_filepath, encoding="utf-8")
-    y = data["sentiment"].apply(return_label)
+    data = pd.read_csv(dataset_filepath, encoding="utf-8", sep="\t")
+    y = data["label"].apply(return_label)
 
     X_train, X_test, y_train, y_test = train_test_split(
-        data["review"],
+        data["Message"],
         y,
         test_size=0.2,
         random_state=42,
