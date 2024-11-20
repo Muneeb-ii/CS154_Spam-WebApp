@@ -59,7 +59,7 @@ if __name__ == "__main__":
     CWD = Path.cwd()
     APP = CWD.joinpath("My_App")
     DATA_DIR = APP.joinpath("data")
-    dataset_filepath = DATA_DIR.joinpath("german_dataset.csv")
+    dataset_filepath = DATA_DIR.joinpath("SMSSpamCollection.txt")
 
     data = pd.read_csv(dataset_filepath, encoding="utf-8", sep="\t")
     y = data["label"].apply(return_label)
