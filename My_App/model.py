@@ -16,7 +16,7 @@ from sklearn.naive_bayes import MultinomialNB
 
 # Change this based on the number of labels you have
 def return_label(label):
-    if label == "positive":
+    if label == "ham":
         return 1
     else:
         return 0
