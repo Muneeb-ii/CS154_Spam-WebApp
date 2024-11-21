@@ -7,15 +7,15 @@ Muneeb Azfar Nafees
 
 ### Introspection
 
-_Describe the challenges you faced and what you learned_
+None. It was a fairly simple project!
 
 ### Dataset
 
-_Which dataset did you choose for the classification task?_
+SMSSpamCollection
 
 ### Resources
 
-_List the people and resources you used to complete the project_
+https://www.w3schools.com/css/
 
 
 ### *DO NOT EDIT BELOW THIS LINE*
