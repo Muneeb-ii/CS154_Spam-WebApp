@@ -6,7 +6,7 @@
     <title>Prediction Result</title>
     <style>
         body {
-            font-family: Arial, sans-serif;
+            font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
             background-color: #94bac7;
             margin: 0;
             padding: 0;
@@ -30,10 +30,16 @@
             font-size: 18px;
             color: #555;
         }
-        
         strong {
             font-size: 18px;
-            color: #ee0707;
+        }
+        .spam {
+            font-size: 18px;
+            color: #ff0000;
+        }
+        .ham {
+            font-size: 18px;
+            color: #0c750c;
         }
         a {
             display: inline-block;
@@ -46,14 +52,21 @@
         }
         a:hover {
             background-color: #45a049;
+            font-size: 18px;
         }
     </style>
 </head>
 <body>
     <div class="container">
         <h1>Prediction Result</h1>
-        <p>Input Text: {{ text }}</p>
-        <p>Label: <strong>{{ prediction }}</strong> </p>
+        <p><strong>Input Text:</strong> {{ text }}</p>
+        <p><strong>Label:</strong>  
+            {% if prediction == "Spam" %}
+                <strong class="spam">{{ prediction }}</strong>
+            {% elif prediction == "Ham" %}
+                <strong class="ham">{{ prediction }}</strong>
+            {% endif %}
+        </p>
         <a href="/">Analyze another message</a>
     </div>
 </body>
