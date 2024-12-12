@@ -49,4 +49,7 @@ A couple of things to note before you start
 1. Install the following dependencies - `fastapi, uvicorn, python-multipart` using pip.
 2. Ensure your model is able to predict with decent accuracy.
 3. Before running the `main.py` file. Ensure you have new `model` and `vectorizer` objects `.pkl` saved.
-4. Read the `model.py` and compare it with last week's Jupyter notebook to understand the differences. 
+4. Read the `model.py` and compare it with last week's Jupyter notebook to understand the differences.
+
+## Feedback
+- [110] Two different working webapps with different classifications
