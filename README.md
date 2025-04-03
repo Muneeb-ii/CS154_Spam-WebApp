@@ -1,55 +1,79 @@
-[![Review Assignment Due Date](https://classroom.github.com/assets/deadline-readme-button-22041afd0340ce965d47ae6ef1cefeee28c7c493a6346c4f15d667ab976d596c.svg)](https://classroom.github.com/a/t-XuvzOz)
-# Project 7 WebApp
+# SMS Spam Classifier Web App
 
-### Name
+This project packages a trained Naive Bayes classifier as a simple web application using FastAPI. The model classifies SMS messages as **spam** or **not spam** based on the `SMSSpamCollection` dataset. Built as part of **CS154**, an introductory Python course with NLP components.
 
-Muneeb Azfar Nafees
-
-### Introspection
-
-None. It was a fairly simple project!
-
-### Dataset
-
-SMSSpamCollection
-
-### Resources
-
-https://www.w3schools.com/css/
-
-
-### *DO NOT EDIT BELOW THIS LINE*
 ---
 
-## Goal
+## 📌 Features
 
-The goals of this project are:
+- Trained Naive Bayes model with `TfidfVectorizer`
+- Web interface built using **FastAPI**
+- Accepts user input for real-time classification
+- Local web server hosted using **Uvicorn**
+- Exports and loads `.pkl` model and vectorizer files for production use
 
-* Host your ML model as a web app for others to try it out. 
+---
 
+## 🧠 Reflections
 
-## Description
+This was a fairly straightforward project. Converting the notebook to Python scripts and setting up the FastAPI server went smoothly with no major hurdles.
 
-In this project, you will host your ML model as a web app. This project contains all the files you need to create a web app on your own.
+---
 
-In this project, the web app will be local. However, if you are interested in hosting it online so that others can see the app, you can either use GCP or AWS which provide some free tiers. But, a simple option will be Heroku. [This](https://blog.bolajiayodeji.com/how-to-deploy-a-machine-learning-model-to-the-web) article provides some guidance. Although, you can search the web for some alternatives. 
+## 🛠️ How to Use
 
-The main tasks are as follows:
+### ✅ Prerequisites
 
-1. Convert the Jupyter notebook into a Python script, similar to the `model.py`. 
-2. Run the `model.py` to create `.pkl` objects. These objects are saving the model and vectorizer in binary code.
-3. Run the web app module `main.py` by running `python app/main.py`
-4. Open your web browser and go to http://0.0.0.0:8000
+Before running the web app:
 
+1. Install required dependencies:
+   ```bash
+   pip install fastapi uvicorn python-multipart scikit-learn pandas
+   ```
 
-## Pre-Requisites
+2. Run the model script to generate serialized files:
+   ```bash
+   python model.py
+   ```
+   This creates:
+   - `model.pkl` — the trained classifier
+   - `vectorizer.pkl` — the fitted TfidfVectorizer
 
-A couple of things to note before you start
+3. Launch the web app:
+   ```bash
+   python app/main.py
+   ```
 
-1. Install the following dependencies - `fastapi, uvicorn, python-multipart` using pip.
-2. Ensure your model is able to predict with decent accuracy.
-3. Before running the `main.py` file. Ensure you have new `model` and `vectorizer` objects `.pkl` saved.
-4. Read the `model.py` and compare it with last week's Jupyter notebook to understand the differences.
+4. Open your browser and visit:
+   ```
+   http://0.0.0.0:8000
+   ```
 
-## Feedback
-- [110] Two different working webapps with different classifications
+---
+
+## 🧪 Dataset
+
+- **SMSSpamCollection**: A labeled dataset for binary classification of SMS messages into spam or ham.
+
+---
+
+## 🧰 Files Overview
+
+- `model.py`: Converts the Jupyter Notebook into a trainable pipeline and saves the model
+- `app/main.py`: FastAPI web interface for real-time classification
+- `model.pkl`, `vectorizer.pkl`: Serialized model and vectorizer
+- `index.html`: HTML interface served via FastAPI
+
+---
+
+## 📚 References
+
+- [W3Schools CSS Reference](https://www.w3schools.com/css/)
+- [FastAPI Documentation](https://fastapi.tiangolo.com/)
+- [How to Deploy a Machine Learning Model to the Web](https://blog.bolajiayodeji.com/how-to-deploy-a-machine-learning-model-to-the-web)
+
+---
+
+## 🪪 License
+
+This project is licensed under the MIT License.
